@@ -1,0 +1,140 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>COVID</title>
+    <script type="text/javascript" src=""></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <button class="dropdown-btn"><i class="fa fa-fw fa-home"></i>Dashboard
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="dataart.html">Data Art</a>
+        </div>
+        <a href="about.html"><i class="fa fa-fw fa-user"></i>About</a>
+    </div>
+
+    <div class="main">
+        <h2>Dashboard</h2>
+        <div id="country"></div>
+        <canvas id="myChart" width="300" height="190" style="border:1px solid #d3d3d3;"></canvas>
+    </div>
+
+
+    <script>
+    
+        // Fetch the dataset from api
+        async function getData() {
+            const response = await fetch("https://covid-193.p.rapidapi.com/statistics?country=uk", {
+                "method": "GET", // Using (GET) to retrieve information
+                "headers": {
+                    "x-rapidapi-host": "covid-193.p.rapidapi.com", //Host of the data
+                    "x-rapidapi-key": "9c2ce150b7msh9711c5a992a4626p1d8f05jsn57ef9a2b3e9e" //Key authentication to access the data
+                }
+
+            })
+            const data = await response.json();
+            console.log(data.response);
+
+            const html = await data.response.map(statistics => {
+
+                    return `
+        <div class="statistics">
+
+        <p class="ctry">Country: ${statistics.country}</p>
+        <p>Date: ${statistics.day}</p>
+      
+         </div>
+
+
+        <p>New: ${statistics.cases.new} | Active: ${statistics.cases.active} | Critical: ${statistics.cases.critical} | Recovered: ${statistics.cases.recovered}</p>
+        
+`;
+
+                })
+                .join("");
+            console.log(html);
+            document.querySelector('#country').insertAdjacentHTML("afterbegin", html);
+        }
+
+        getData();
+
+       // pie chart
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['New', 'Active', 'Critical', 'Recovered'],
+                datasets: [{
+                    label: 'Cases in the UK (COVID-19)',
+                    data: [+4344, 56964, 1559, 135],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(255, 159, 64, 0.6)'
+                    ],
+                    borderColor: '#777',
+                    borderWidth: 1,
+                    hoverBorderwidth: 3,
+                    hoverBordercolor: '#000'
+
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Cases in the Uk (COVID-19)',
+                    fontSize: 20
+                },
+
+                legend: {
+                    position: 'right',
+                    labels: {
+                        fontSize: 18
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 50,
+                        right: 0,
+                        bottom: 10,
+                        top: 10
+                    }
+                }
+
+            }
+        });
+
+
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
