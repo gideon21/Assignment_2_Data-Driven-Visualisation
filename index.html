@@ -69,7 +69,7 @@
                 })
                 .join("");
         
-        //returned JSON data
+        //returned JSON data - to be used for live chart
         let country = data.response.map(statistics =>{return `${statistics.country}`; })
         let cases_new = data.response.map(statistics =>{return `${statistics.cases.new}`; })
         let cases_active = data.response.map(statistics =>{return `${statistics.cases.active}`; })
