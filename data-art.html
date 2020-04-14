@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Data Art</title>
+
+<!-- CSS Files -->
+<link type="text/css" href="css/base.css" rel="stylesheet" />
+<link type="text/css" href="css/Hypertree.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<!--[if IE]><script language="javascript" type="text/javascript" src="../../Extras/excanvas.js"></script><![endif]-->
+
+<!-- JIT Library File -->
+<script language="javascript" type="text/javascript" src="js/jit.js"></script>
+
+<!-- Example File -->
+<script language="javascript" type="text/javascript" src="js/example4.js"></script>
+</head>
+
+<body onload="init();">
+    <div class="sidenav">
+        <button class="dropdown-btn"><i class="fa fa-fw fa-home"></i>Dashboard
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="index.html">Data Dashboard</a>
+            <a href="data-art.html">Data Art</a>
+        </div>
+        <a href="about.html"><i class="fa fa-fw fa-info"></i>About</a>
+    </div>
+    <div class="main">
+<div id="container">
+
+<div id="center-container">
+    <div id="infovis"></div>  
+    <div class="info">
+        <h2>Data Art - Tree Animation</h2>
+        <p>A live JSON Tree structure is used as input for this animation. Clicking on a node should move the tree and center that node. The centered node's children are displayed in a relations list in the right column.</p>
+    </div>  
+</div>
+
+<div id="right-container">
+
+<div id="inner-details"></div>
+<div id="date-container"></div>
+</div>
+
+<div id="log"></div>
+</div>
+</div>
+<script>
+            /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    
+</script>
+</body>
+</html>
