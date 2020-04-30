@@ -42,6 +42,7 @@
             <div id="chartContainer" style="height: 600px; width: 100%;"></div>
             <div id="chartTwo" width="900" height="600" style="border:1px solid #d3d3d3;">
                 <h2>Covid-19 Cases Within UK Region</h2>
+                <p style="font-size: 14px;">Practise your social distancing skills. Drag to move up or down. Click to bring forward.</p>
             </div>
         </div>
     </div>
@@ -384,65 +385,6 @@
 
     <!--Bubble Chart-->
     <script src="js/bubble-chart.js"></script>
-
-
-
-
-    <style>
-  
-
- @keyframes heartbeat
-        {
-        0%
-        {
-            transform: scale( .95 );
-        }
-        20%
-        {
-            transform: scale( 1 );
-        }
-        40%
-        {
-            transform: scale( .95 );
-        }
-        60%
-        {
-            transform: scale( 1 );
-        }
-        80%
-        {
-            transform: scale( .95 );
-        }
-        100%
-        {
-            transform: scale( .95 );
-        }
-}
-
-.node {
-  stroke-width: 1.5px;
-}
-.node:hover circle {
-  fill: grey !important;
-}
-
-text {
-  font: 18px 'Open Sans', sans-serif;;
-  text-anchor: middle;
-  pointer-events: none;
-  fill: white;
-}
-circle {
-  fill: #ccc;
-  stroke: white ;
-  stroke-width: 2px;
-}
-circle
-{
-  
-  animation: heartbeat 1s infinite;
-}     
-           </style>
 
 
 </body>

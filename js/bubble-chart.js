@@ -10,8 +10,9 @@ var firstDataset = [
   {"id": 2, "name": "Wales", "r": 40 },
   {"id": 2, "name": "9280", "r": 30 },
 
-  
- 
+  {"id": 3, "name": "Nireland", "r": 20 },
+  {"id": 3, "name": "3374", "r": 30 },
+
 ];
 
 
@@ -21,7 +22,7 @@ var width = window.innerWidth,
 var fill = d3.scale.category10();
 
 var nodes = [], labels = [],
-    foci = [{x: 0, y: 150}, {x: 350, y: 150}, {x: 200, y: 150}];
+    foci = [{x: 0, y: 150}, {x: 350, y: 150}, {x: 200, y: 150}, {x: 550, y: 150}];
 
 var svg = d3.select("#chartTwo")
     .append("svg")
