@@ -128,3 +128,56 @@ h2{
     background-color: #ff6666;
     border-bottom: 1px solid #fff;
 }
+
+
+@keyframes heartbeat
+{
+0%
+{
+    transform: scale( .95 );
+}
+20%
+{
+    transform: scale( 1 );
+}
+40%
+{
+    transform: scale( .95 );
+}
+60%
+{
+    transform: scale( 1 );
+}
+80%
+{
+    transform: scale( .95 );
+}
+100%
+{
+    transform: scale( .95 );
+}
+}
+
+.node {
+stroke-width: 1.5px;
+}
+.node:hover circle {
+fill: grey !important;
+}
+
+text {
+font: 18px 'Open Sans', sans-serif;;
+text-anchor: middle;
+pointer-events: none;
+fill: white;
+}
+circle {
+fill: #ccc;
+stroke: white ;
+stroke-width: 2px;
+}
+circle
+{
+
+animation: heartbeat 1s infinite;
+}   
