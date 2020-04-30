@@ -80,7 +80,7 @@
             }]
         },
         options: {
-
+            maintainAspectRatio: false,
             title: {
                 display: false,
                 text: 'Cases in the ' + country + ' (COVID-19) ' + day,
