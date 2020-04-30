@@ -20,129 +20,6 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.css" rel="stylesheet">
 
-  <script>
-    window.onload = function () {
-    
-    var chart = new CanvasJS.Chart("chartContainer", {
-      animationEnabled: true,
-      title:{
-       // text: "Covid-19 Deaths Within The UK"
-      },
-      axisX: {
-        valueFormatString: "DD MMM,YY",
-        labelFontColor: "#858796",
-        labelFontFamily: "Verdana",
-        tickLength: 15,
-        lineDashType: "dot",
-        lineThickness: 2,
-        interlacedColor: "#F8F1E4",
-        tickColor: "red"
-      },
-      axisY: {
-        title: "Deaths From Covid-19",
-        includeZero: false,
-        labelFontColor: "#858796",
-        labelFontFamily: "Verdana",
-        titleFontFamily: "Verdana",
-        titleFontColor: "#858796"
-      },
-      legend:{
-        cursor: "pointer",
-        fontSize: 14,
-        fontColor: "#858796",
-        fontFamily: "tahoma",
-        fontweight: "normal",
-        itemclick: toggleDataSeries
-      },
-      toolTip:{
-        shared: true
-      },
-      data: [{
-        name: "Deaths March 7th - March 31st",
-        type: "spline",
-        showInLegend: true,
-        dataPoints: [
-          { x: new Date(2020,2,7), y: 2 },
-                { x: new Date(2020,2,8), y: 4 },
-          { x: new Date(2020,2,9), y: 5 },
-          { x: new Date(2020,2,10), y: 5 },
-          { x: new Date(2020,2,11), y: 6},
-          { x: new Date(2020,2,12), y: 8 },
-          { x: new Date(2020,2,13), y: 11 },
-          { x: new Date(2020,2,14), y: 21 },
-                { x: new Date(2020,2,15), y: 35 },
-          { x: new Date(2020,2,16), y: 53 },
-          { x: new Date(2020,2,17), y: 69 },
-          { x: new Date(2020,2,18), y: 104 },
-          { x: new Date(2020,2,19), y: 137 },
-          { x: new Date(2020,2,20), y: 167 },
-          { x: new Date(2020,2,21), y: 233 },
-                { x: new Date(2020,2,22), y: 281},
-          { x: new Date(2020,2,23), y: 335},
-          { x: new Date(2020,2,24), y: 422},
-          { x: new Date(2020,2,25), y: 463},
-          { x: new Date(2020,2,26), y: 578},
-          { x: new Date(2020,2,27), y: 769},
-          { x: new Date(2020,2,28), y: 1019},
-                { x: new Date(2020,2,29), y: 1228},
-          { x: new Date(2020,2,30), y: 1408},
-                { x: new Date(2020,2,31), y: 1789},
-        ]
-      },
-      {
-        name: "Deaths in April 1st - April 28th",
-        type: "spline",
-        showInLegend: true,
-        dataPoints: [
-          { x: new Date(2020,3,1), y: 2352 },
-          { x: new Date(2020,3,2), y: 2921},
-          { x: new Date(2020,3,3), y: 3600},
-          { x: new Date(2020,3,4), y: 4313},
-          { x: new Date(2020,3,5), y: 4934},
-          { x: new Date(2020,3,6), y: 5373},
-          { x: new Date(2020,3,7), y: 6159},
-                { x: new Date(2020,3,8), y: 7097},
-          { x: new Date(2020,3,9), y: 7978},
-          { x: new Date(2020,3,10), y: 8958},
-          { x: new Date(2020,3,11), y: 9875},
-          { x: new Date(2020,3,12), y: 10612},
-          { x: new Date(2020,3,13), y: 11329},
-          { x: new Date(2020,3,14), y: 12107},
-                { x: new Date(2020,3,15), y: 12868},
-          { x: new Date(2020,3,16), y: 13729},
-          { x: new Date(2020,3,17), y: 14576},
-          { x: new Date(2020,3,18), y: 15468},
-          { x: new Date(2020,3,19), y: 16060},
-          { x: new Date(2020,3,20), y: 16509},
-          { x: new Date(2020,3,21), y: 17337},
-                { x: new Date(2020,3,22), y: 17500},
-          { x: new Date(2020,3,23), y: 18000},
-          { x: new Date(2020,3,24), y: 19506},
-              { x: new Date(2020,3,25), y: 20319},
-              { x: new Date(2020,3,26), y: 20732},
-              { x: new Date(2020,3,27), y: 21578},
-                { x: new Date(2020,3,28), y: 22268},
-                { x: new Date(2020,3,29), y: 22279},
-        ]
-      },
-      {
-      }]
-    });
-    chart.render();
-    
-    function toggleDataSeries(e){
-      if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-        e.dataSeries.visible = false;
-      }
-      else{
-        e.dataSeries.visible = true;
-      }
-      chart.render();
-    }
-    
-    }
-    </script>
-   
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
@@ -395,412 +272,57 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <div id="myModal" class="modal">
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
-  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-  <!-- piechart second element-->
-  <script type="text/javascript">
-    // Fetch the dataset from api
-    fetch("https://covid-193.p.rapidapi.com/statistics?country=uk", {
-            "method": "GET", // Using (GET) to retrieve information
-            "headers": {
-                "x-rapidapi-host": "covid-193.p.rapidapi.com", //Host of the data
-                "x-rapidapi-key": "9c2ce150b7msh9711c5a992a4626p1d8f05jsn57ef9a2b3e9e" //Key authentication to access the data
-            }
-
-        })
-        .then(response => {
-
-            if (!response.ok) {
-                throw Error("ERROR");
-            }
-            return response.json();
-
-        }).then(data => {
-
-
-
-            const html = data.response.map(statistics => {
-
-
-                })
-                .join("");
-
-            //returned JSON data - to be used for live chart
-            let country = data.response.map(statistics => {
-                return `${statistics.country}`;
-            })
-            let cases_new = data.response.map(statistics => {
-                return `${statistics.cases.new}`;
-            })
-            let cases_active = data.response.map(statistics => {
-                return `${statistics.cases.active}`;
-            })
-            let cases_critical = data.response.map(statistics => {
-                return `${statistics.cases.critical}`;
-            })
-            let cases_recovered = data.response.map(statistics => {
-                return `${statistics.cases.recovered}`;
-            })
-            let cases_total = data.response.map(statistics => {
-                return `${statistics.cases.total}`;
-            })
-            let deaths_total = data.response.map(statistics => {
-                return `${statistics.deaths.total}`;
-            })
-            let deaths_new = data.response.map(statistics => {
-                return `${statistics.deaths.new}`;
-            })
-            let tests_total = data.response.map(statistics => {
-                return `${statistics.tests.total}`;
-            })
-            let day = data.response.map(statistics => {
-                return `${statistics.day}`;
-            })
-
-            var tx = 'Cases in the ' + country + ' (COVID-19) ' + day;
-
-          // var newTitle = () => {
-            document.getElementById("pieTitle").innerHTML = tx;
-           //}
-
-
-
-            //pie chart
-            const ctx = document.getElementById("myChart").getContext('2d');
-            const myChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: ['New', 'Critical'],
-                    datasets: [{
-                        data: [cases_new, cases_critical],
-                        backgroundColor: [
-                            "#00b300",
-                            "#d21243"
-                        ],
-                        borderColor: "#fff"
-                    }]
-                },
-                options: {
-
-                    title: {
-                        display: false,
-                        text: 'Cases in the ' + country + ' (COVID-19) ' + day,
-                        fontSize: 20
-                    },
-
-                    tooltips: {
-                        enabled: true
-                    },
-                    plugins: {
-                        datalabels: {
-                            formatter: (value, ctx) => {
-                                let datasets = ctx.chart.data.datasets;
-                                if (datasets.indexOf(ctx.dataset) === datasets.length - 1) {
-                                    let sum = datasets[0].data.reduce((a, b) => a + b, 0);
-
-                                }
-                            },
-                            color: '#fff',
-                        }
-                    }
-
-
-                }
-
-            });
-        })
-
-</script>
-
-
-<script src="js/demo/chart-pie-demo.js"></script>
-
-
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="container">
   
-<!-- w3school modal -->
-
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div id="container">
-
-      <div id="center-container">
-          <div id="infovis"></div>  
-         
-      </div>
-      
-      <div id="right-container">
-      
-      <div id="inner-details"></div>
-      <div id="date-container"></div>
-      </div>
-      
-      <div id="log"></div>
-      </div>
+        <div id="center-container">
+            <div id="infovis"></div>  
+           
+        </div>
+        
+        <div id="right-container">
+        
+        <div id="inner-details"></div>
+        <div id="date-container"></div>
+        </div>
+        
+        <div id="log"></div>
+        </div>
+    </div>
+  
   </div>
 
-</div>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<style>
-  /* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-  height:100vh;background: #1a1a1a;
-}
+ <!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+<!-- piechart second element covid cases-->
+<script src="js/piechart.js"></script>
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+<!-- piechart male / female percentage-->
+<script src="js/demo/chart-pie-demo.js"></script>
 
-/*Social bubble chart css*/
-@keyframes heartbeat
-{
-0%
-{
-    transform: scale( .95 );
-}
-20%
-{
-    transform: scale( 1 );
-}
-40%
-{
-    transform: scale( .95 );
-}
-60%
-{
-    transform: scale( 1 );
-}
-80%
-{
-    transform: scale( .95 );
-}
-100%
-{
-    transform: scale( .95 );
-}
-}
+<!--script for data art-->
+<script src="js/data-art-script.js"></script>
 
-.node {
-stroke-width: 1.5px;
-}
-.node:hover circle {
-fill: grey !important;
-}
+<!--general script-->
+<script src="js/script.js"></script>
 
-text {
-font: 18px 'Open Sans', sans-serif;;
-text-anchor: middle;
-pointer-events: none;
-fill: white;
-}
-circle {
-fill: #ccc;
-stroke: white ;
-stroke-width: 2px;
-}
-circle
-{
-
-animation: heartbeat 1s infinite;
-}   
-</style>
-
-<script>
-  // Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("btn-art");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
-<!--bubble social distancing chart-->
-
-<script>
-  var firstDataset = [
-  {"id": 0, "name": "England", "r": 90 },
-  {"id": 0, "name": "112467", "r": 30 },
+<!--script for linechart-->
+<script src="js/linechart-script.js"></script>
 
 
-  {"id": 1, "name": "Scotland", "r": 50 },
-  {"id": 1, "name": "10521", "r": 30 },
- 
-
-  {"id": 2, "name": "Wales", "r": 40 },
-  {"id": 2, "name": "9280", "r": 30 },
-
-  {"id": 3, "name": "Nireland", "r": 20 },
-  {"id": 3, "name": "3374", "r": 30 },
-
-];
-
-
-var width = window.innerWidth,
-    height = 450;
-
-var fill = d3.scale.category10();
-
-var nodes = [], labels = [],
-    foci = [{x: 0, y: 150}, {x: 350, y: 150}, {x: 200, y: 150}, {x: 550, y: 150}];
-
-var svg = d3.select("#chartBubble")
-    .append("svg")
-    .attr("width", "100%")
-    .attr("height", height)
-    //.attr("domflag", '');
-
-var force = d3.layout.force()
-    .nodes(nodes)
-    .links([])
-    .charge(-700)
-    //.chargeDistance(200)
-    .gravity(0.1)
-    .friction(0.8)
-    .size([width, height])
-    .on("tick", tick);
-
-//var node = svg.selectAll("circle");
-var node = svg.selectAll("g");
-
-var counter = 0;
-
-function tick(e) {
-  var k = .1 * e.alpha;
-
-  // Push nodes toward their designated focus.
-  nodes.forEach(function(o, i) {
-    o.y += (foci[o.id].y - o.y) * k;
-    o.x += (foci[o.id].x - o.x) * k;
-  });
-
-  node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-}
-
-var updatePie = function () {
-
-var timer = setInterval(function(){
-
-  if (nodes.length > firstDataset.length-1) { clearInterval(timer); return;}
-
-  var item = firstDataset[counter];
-  nodes.push({id: item.id, r: item.r, name: item.name});
-  force.start();
-
-  node = node.data(nodes);
-
-  var n = node.enter().append("g")
-      .attr("class", "node")
-      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
-      .style('cursor', 'pointer')
-      .on('mousedown', function() {
-         var sel = d3.select(this);
-         sel.moveToFront();
-      })
-      .call(force.drag);
-
-  n.append("circle")
-      .attr("r",  function(d) { return d.r; })
-      .style("fill", function(d) { return fill(d.id); })
-
-  n.append("text")
-      .text(function(d){
-          return d.name;
-      })
-      .style("font-size", function(d) {
-          return Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 16) + "px"; 
-       })
-      .attr("dy", ".35em")
-
-  counter++;
-
-  
-}, 2300);
-
-
-}
-
-d3.selection.prototype.moveToFront = function() {
-  return this.each(function(){
-    this.parentNode.appendChild(this);
-  });
-};
-
-
-
-function resize() {
-  width = window.innerWidth;
-  force.size([width, height]);
-  force.start();
-}
-
-d3.select(window).on('resize', resize);
-
-//
-var updateFunction = updatePie();
-var container = d3.select("body").selectAll("svg");
-
-</script>
 
 </body>
 
