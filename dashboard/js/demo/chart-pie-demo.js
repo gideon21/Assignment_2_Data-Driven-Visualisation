@@ -27,6 +27,18 @@ var myPieChart = new Chart(ctx, {
       displayColors: false,
       caretPadding: 10,
     },
+     plugins: {
+                        datalabels: {
+                            formatter: (value, ctx) => {
+                                let datasets = ctx.chart.data.datasets;
+                                if (datasets.indexOf(ctx.dataset) === datasets.length - 1) {
+                                    let sum = datasets[0].data.reduce((a, b) => a + b, 0);
+
+                                }
+                            },
+                            color: 'white',
+                        }
+                    },
     legend: {
       display: false
     },
