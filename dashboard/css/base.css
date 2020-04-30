@@ -276,3 +276,11 @@ div#date-container {
   
   animation: heartbeat 1s infinite;
   }  
+
+  /*add padding to pie chart body bottom */
+  @media (min-width: 1200px) {
+    #piechart-body.card-body, #m-f-pie.card-body{
+      padding-bottom: 60px;
+
+    }
+  }
