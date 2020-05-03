@@ -284,3 +284,5 @@ div#date-container {
 
     }
   }
+
+  a.canvasjs-chart-credit{ display:none!important; }
