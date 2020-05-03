@@ -118,13 +118,14 @@
                 <!-- Card Body -->
                 <div class="card-body">
                   <div class="chart-area">
+                    <!--LINE CHART, the first canvas us id chartContainer https://canvasjs.com/-->
                     <div id="chartContainer" style="height: 300px; width: 100%;"></div><!--canvas for canvasjs-->
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Bubble Chart -->
+            <!-- Info, this div (d-none) is hidden as we do not need it for now -->
             <div class="col-xl-4 col-lg-5 d-none">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
@@ -155,7 +156,7 @@
 
              <div class="row">
 
-              <!-- Area Chart -->
+              <!-- Pie Chart Cases in the UK (second canvas on the page) -->
               <div class="col-xl-8 col-lg-7">
                 <div class="card shadow mb-4">
                   <!-- Card Header - Dropdown -->
@@ -165,13 +166,14 @@
                   <!-- Card Body -->
                   <div class="card-body" id="piechart-body">
                     <div class="chart-area">
+                      <!-- ID for second canvas on the page #myChart-->
                       <canvas id="myChart"></canvas>
                     </div>
                   </div>
                 </div>
               </div>
   
-              <!-- Pie Chart -->
+              <!-- Pie Chart for male /female percentage-->
               <div class="col-xl-4 col-lg-5">
                 <div class="card shadow mb-4">
                   <!-- Card Header - Dropdown -->
@@ -182,6 +184,7 @@
                   <!-- Card Body -->
                   <div class="card-body" id="m-f-pie">
                     <div class="chart-pie pt-4 pb-2">
+                      <!--ID for male / female % #myPieChart-->
                       <canvas id="myPieChart"></canvas>
                     </div>
                     <div class="mt-4 text-center small">
@@ -202,7 +205,7 @@
 
            <div class="row">
 
-            <!-- Area Chart -->
+            <!-- D3 Bubble -->
             <div class="col-xl-12 col-lg-10">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
@@ -214,7 +217,7 @@
                 <div class="card-body">
                   <div class="chart-area">
                     <div id="chartBubble">
-                      
+                      <!--the D3 bubble appears here. ID #chartBubble -->
                     </div>
                   </div>
                 </div>
@@ -254,33 +257,15 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content" style="height:100vh;background: #1a1a1a;">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div id="myModal" class="modal">
 
-    <!-- Modal content -->
+    <!-- Modal content contains data art-->
     <div class="modal-content">
       <span class="close">&times;</span>
       <div id="container">
   
         <div id="center-container">
+          <!-- ID for data art #infovis-->
             <div id="infovis"></div>  
            
         </div>
@@ -306,12 +291,14 @@
 
  <!-- Custom scripts for all pages-->
 <script src="js/sb-admin-2.min.js"></script>
+
+<!-- CANVAS JS-->
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-<!-- piechart second element covid cases-->
+<!-- script for piechart second element covid cases-->
 <script src="js/piechart.js"></script>
 
-<!-- piechart male / female percentage-->
+<!--script for piechart male / female percentage-->
 <script src="js/demo/chart-pie-demo.js"></script>
 
 <!--script for data art-->
@@ -320,7 +307,7 @@
 <!--general script-->
 <script src="js/script.js"></script>
 
-<!--script for linechart-->
+<!--script for linechart (the first Canvas on page) -->
 <script src="js/linechart-script.js"></script>
 
 
